@@ -30,6 +30,15 @@
     </div>
 </nav>
 
+@if(session('success'))
+    <div style="position: fixed; top: 80px; right: 20px; z-index: 1055; min-width: 280px;">
+        <div class="alert alert-success shadow-lg rounded-3 px-4 py-3 d-flex justify-content-between align-items-center fade show" role="alert" style="font-size: 0.95rem;">
+            <span class="me-3">{{ session('success') }}</span>
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close" style="font-size: 0.8rem;"></button>
+        </div>
+    </div>
+@endif
+
 <div class="container">
     @yield('content')
 </div>
@@ -37,5 +46,16 @@
 @include('frontend.partials.footer')
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    setTimeout(() => {
+        let alertBox = document.querySelector('.alert');
+        if (alertBox) {
+            alertBox.classList.remove('show');
+            alertBox.classList.add('fade');
+        }
+    }, 3000);
+</script>
+
 </body>
 </html>
