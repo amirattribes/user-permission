@@ -42,6 +42,10 @@
                 </tr>
             </tbody>
         </table>
+        <!-- Existing Cart Items Listing -->
+
+        <a href="{{ route('checkout.index') }}" class="btn btn-primary mt-3">Proceed to Checkout</a>
+
     @else
         <p>Your cart is empty.</p>
     @endif

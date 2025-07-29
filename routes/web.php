@@ -13,7 +13,7 @@ use \App\Http\Controllers\Admin\ProductController as AdminProductController;
 use \App\Http\Controllers\Frontend\HomeController;
 use \App\Http\Controllers\Frontend\CartController;
 use \App\Http\Controllers\Frontend\ProductController;
-
+use \App\Http\Controllers\Frontend\CheckoutController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +25,20 @@ Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('/thank-you', function () {
+    $orderId = session('order_id');
+    return view('frontend.thankyou', compact('orderId'));
+})->name('thankyou');
+
+Route::get('/support', function () {
+    return view('frontend.support');
+})->name('support');
+
+Route::get('/test-email', function () {
+    return view('emails.new_order', ['order' => \App\Models\OrderItem::first()]);
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
