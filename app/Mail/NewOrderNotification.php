@@ -25,9 +25,9 @@ class NewOrderNotification extends Mailable
 
     public function build()
     {
-        // return $this->subject('New Order Received - Order #'.$this->order->id)
-        //             ->view('emails.new_order')
-        //             ->with(['order' => $this->order]);
+        return $this->subject('New Order Received - Order #'.$this->order->id)
+                    ->view('emails.new_order')
+                    ->with(['order' => $this->order]);
     }
 
 
@@ -37,7 +37,7 @@ class NewOrderNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Order Notification',
+            subject: 'New Order Received - Order #' . $this->order->id,
         );
     }
 
@@ -47,7 +47,8 @@ class NewOrderNotification extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.order-confirmation',
+            with: ['order' => $this->order],
         );
     }
 

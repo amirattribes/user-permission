@@ -9,23 +9,23 @@
 
         <div class="col-md-6">
             <label for="name" class="form-label">Full Name <span class="text-danger">*</span></label>
-            <input name="name" id="name" class="form-control" placeholder="e.g. Ali Khan" required>
+            <input name="name" id="name" value="Amir" class="form-control" placeholder="e.g. Ali Khan" required>
         </div>
 
         <div class="col-md-6">
             <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
-            <input name="phone" id="phone" class="form-control" placeholder="e.g. 03XXXXXXXXX" required>
+            <input name="phone" id="phone" value="03343701960" class="form-control" placeholder="e.g. 03XXXXXXXXX" required>
         </div>
 
         <div class="col-12">
             <label for="address" class="form-label">Shipping Address <span class="text-danger">*</span></label>
-            <textarea name="address" id="address" class="form-control" rows="3" placeholder="Complete address..." required></textarea>
+            <textarea name="address" id="address" class="form-control" rows="3" placeholder="Complete address..." required> test address</textarea>
         </div>
 
         <div class="col-md-6">
             <label for="payment_method" class="form-label">Payment Method <span class="text-danger">*</span></label>
             <select name="payment_method" id="payment_method" class="form-select" required>
-                <option disabled selected>Select a method</option>
+                <!-- <option disabled selected>Select a method</option> -->
                 <option value="cod">Cash on Delivery</option>
                 <option value="jazzcash">JazzCash</option>
                 <option value="stripe">Stripe</option>

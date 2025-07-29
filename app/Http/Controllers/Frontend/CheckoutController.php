@@ -44,7 +44,7 @@ class CheckoutController extends Controller
 
         session()->forget('cart'); // Clear cart
         
-        //Mail::to('amir.attribes@gmail.com')->send(new NewOrderNotification($order));
+        Mail::to('amir.attribes@gmail.com')->send(new NewOrderNotification($order));
 
         // Redirect to Thank You Page
         return redirect()->route('thankyou')->with('order_id', $order->id);

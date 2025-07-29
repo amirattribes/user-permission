@@ -37,7 +37,7 @@ Route::get('/support', function () {
 })->name('support');
 
 Route::get('/test-email', function () {
-    return view('emails.new_order', ['order' => \App\Models\OrderItem::first()]);
+    return view('emails.order-confirmation');
 });
 
 Route::middleware('auth')->group(function () {

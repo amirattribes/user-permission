@@ -32,8 +32,9 @@
 
         <hr class="bg-light">
 
-        <div class="text-center text-muted">
+        <footer class="bg-dark text-white text-center py-3 mt-5">
             &copy; {{ now()->year }} YourStore. All rights reserved.
         </div>
+        
     </div>
 </footer>
