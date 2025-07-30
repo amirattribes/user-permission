@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\UserRoleController;
 use \App\Http\Controllers\Admin\ProductController as AdminProductController;
-
+use \App\Http\Controllers\Admin\OrderController;
 
 use \App\Http\Controllers\Frontend\HomeController;
 use \App\Http\Controllers\Frontend\CartController;
@@ -49,7 +49,10 @@ Route::middleware('auth')->group(function () {
     Route::put('/user-role/{user}', [UserRoleController::class, 'update'])->name('user-role.update');
     Route::resource('product', AdminProductController::class);
     Route::resource('users', UserController::class);
-    
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
+    Route::put('/orders/{order}/status', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
