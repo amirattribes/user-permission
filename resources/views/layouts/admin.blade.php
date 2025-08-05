@@ -64,37 +64,37 @@
     <div class="sidebar">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
                     <i class="fas fa-home"></i> Dashboard
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('users.*') ? 'active' : '' }}" href="{{ route('users.index') }}">
+                <a class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}" href="{{ route('admin.users.index') }}">
                     <i class="fas fa-users-cog"></i> Users
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('roles.*') ? 'active' : '' }}" href="{{ route('roles.index') }}">
+                <a class="nav-link {{ request()->routeIs('admin.roles.*') ? 'active' : '' }}" href="{{ route('admin.roles.index') }}">
                     <i class="fas fa-user-shield"></i> Roles
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('permissions.*') ? 'active' : '' }}" href="{{ route('permissions.index') }}">
+                <a class="nav-link {{ request()->routeIs('admin.permissions.*') ? 'active' : '' }}" href="{{ route('admin.permissions.index') }}">
                     <i class="fas fa-key"></i> Permissions
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('user-role.*') ? 'active' : '' }}" href="{{ route('user-role.index') }}">
+                <a class="nav-link {{ request()->routeIs('admin.user-role.*') ? 'active' : '' }}" href="{{ route('admin.user-role.index') }}">
                     <i class="fas fa-users-cog"></i>User Role
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('product.*') ? 'active' : '' }}" href="{{ route('product.index') }}">
+                <a class="nav-link {{ request()->routeIs('admin.product.*') ? 'active' : '' }}" href="{{ route('admin.product.index') }}">
                     <i class="fas fa-box"></i> Products
                 </a>
             </li>

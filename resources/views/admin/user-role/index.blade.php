@@ -32,7 +32,7 @@
                                 @endforeach
                             </td>
                             <td class="text-end">
-                                <a href="{{ route('user-role.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Edit Roles</a>
+                                <a href="{{ route('admin.user-role.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Edit Roles</a>
                             </td>
                         </tr>
                     @endforeach

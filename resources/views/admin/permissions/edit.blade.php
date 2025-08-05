@@ -4,7 +4,7 @@
 <div class="container">
     <h2 class="mb-4">Edit Permission</h2>
 
-    <form action="{{ route('permissions.update', $permission->id) }}" method="POST">
+    <form action="{{ route('admin.permissions.update', $permission->id) }}" method="POST">
         @csrf @method('PUT')
 
         <div class="mb-3">
@@ -14,7 +14,7 @@
         </div>
 
         <button class="btn btn-primary">Update</button>
-        <a href="{{ route('permissions.index') }}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ route('admin.permissions.index') }}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 @endsection

@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <h2 class="mb-4">Assign Roles to: <span class="text-primary">{{ $user->name }}</span></h2>
 
-    <form method="POST" action="{{ route('user-role.update', $user->id) }}">
+    <form method="POST" action="{{ route('admin.user-role.update', $user->id) }}">
         @csrf
         @method('PUT')
 
@@ -29,7 +29,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-success">Save Roles</button>
-                <a href="{{ route('user-role.index') }}" class="btn btn-secondary">Back</a>
+                <a href="{{ route('admin.user-role.index') }}" class="btn btn-secondary">Back</a>
             </div>
         </div>
     </form>

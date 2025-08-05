@@ -4,7 +4,7 @@
 <div class="container">
     <h2 class="mb-4">Create Role</h2>
 
-    <form action="{{ route('roles.store') }}" method="POST">
+    <form action="{{ route('admin.roles.store') }}" method="POST">
         @csrf
 
         {{-- Role Name --}}
@@ -48,7 +48,7 @@
         {{-- Buttons --}}
         <div class="mb-3">
             <button type="submit" class="btn btn-success">Create Role</button>
-            <a href="{{ route('roles.index') }}" class="btn btn-secondary">Cancel</a>
+            <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">Cancel</a>
         </div>
     </form>
 </div>

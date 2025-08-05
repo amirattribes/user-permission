@@ -4,7 +4,7 @@
 <div class="container">
     <h2>{{ isset($product) ? 'Edit' : 'Add' }} Product</h2>
 
-    <form method="POST" action="{{ isset($product) ? route('product.update', $product->id) : route('product.store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ isset($product) ? route('admin.product.update', $product->id) : route('admin.product.store') }}" enctype="multipart/form-data">
         @csrf
         @if(isset($product))
             @method('PUT')
@@ -42,7 +42,7 @@
         </div>
 
         <button class="btn btn-primary">{{ isset($product) ? 'Update' : 'Create' }}</button>
-        <a href="{{ route('product.index') }}" class="btn btn-secondary">Back</a>
+        <a href="{{ route('admin.product.index') }}" class="btn btn-secondary">Back</a>
     </form>
 </div>
 @endsection
