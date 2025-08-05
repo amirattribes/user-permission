@@ -4,7 +4,7 @@
 <div class="container">
     <h2 class="mb-4">Create Permission</h2>
 
-    <form action="{{ route('permissions.store') }}" method="POST">
+    <form action="{{ route('admin.permissions.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
@@ -14,7 +14,7 @@
         </div>
 
         <button class="btn btn-success">Create</button>
-        <a href="{{ route('permissions.index') }}" class="btn btn-secondary">Cancel</a>
+        <a href="{{ route('admin.permissions.index') }}" class="btn btn-secondary">Cancel</a>
     </form>
 </div>
 @endsection

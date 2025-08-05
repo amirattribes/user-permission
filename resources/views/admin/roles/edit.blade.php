@@ -4,7 +4,7 @@
 <div class="container">
     <h2 class="mb-4">Edit Role</h2>
 
-    <form action="{{ route('roles.update', $role->id) }}" method="POST">
+    <form action="{{ route('admin.roles.update', $role->id) }}" method="POST">
         @csrf
         @method('PUT')
 
@@ -49,7 +49,7 @@
         {{-- Buttons --}}
         <div class="mb-3">
             <button type="submit" class="btn btn-primary">Update Role</button>
-            <a href="{{ route('roles.index') }}" class="btn btn-secondary">Cancel</a>
+            <a href="{{ route('admin.roles.index') }}" class="btn btn-secondary">Cancel</a>
         </div>
     </form>
 </div>

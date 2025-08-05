@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Users</h2>
-        <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm">+ Add User</a>
+        <a href="{{ route('admin.users.create') }}" class="btn btn-primary btn-sm">+ Add User</a>
     </div>
 
     @if(session('success'))
@@ -35,9 +35,9 @@
                                 @endforeach
                             </td>
                             <td class="text-end">
-                                <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
+                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
 
-                                <!-- <form method="POST" action="{{ route('users.destroy', $user->id) }}" class="d-inline-block" onsubmit="return confirm('Are you sure?')">
+                                <!-- <form method="POST" action="{{ route('admin.users.destroy', $user->id) }}" class="d-inline-block" onsubmit="return confirm('Are you sure?')">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>

@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Edit User</h2>
-        <a href="{{ route('users.index') }}" class="btn btn-secondary btn-sm">← Back</a>
+        <a href="{{ route('admin.users.index') }}" class="btn btn-secondary btn-sm">← Back</a>
     </div>
 
     @if ($errors->any())
@@ -19,7 +19,7 @@
 
     <div class="card shadow-sm">
         <div class="card-body">
-            <form method="POST" action="{{ route('users.update', $user->id) }}">
+            <form method="POST" action="{{ route('admin.users.update', $user->id) }}">
                 @csrf
                 @method('PUT')
 
