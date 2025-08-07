@@ -31,6 +31,6 @@ class UserRoleController extends Controller
 
         $user->syncRoles($request->roles);
 
-        return redirect()->route('user-role.index')->with('success', 'Roles updated successfully.');
+        return redirect()->route('admin.user-role.index')->with('success', 'Roles updated successfully.');
     }
 }
