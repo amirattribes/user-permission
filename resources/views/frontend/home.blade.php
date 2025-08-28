@@ -1,10 +1,10 @@
-@extends('layout.main')
+@extends('frontend.layout')
 
 @push('title')
     <title>My Online Store</title>
 @endpush
 
-@section('main-section')
+@section('content')
 <div class="bg-gray-50">
 
     {{-- Hero Banner --}}
@@ -25,7 +25,7 @@
                 {{-- Category Title --}}
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-semibold">{{ $category->name }}</h3>
-                    <a href="{{ route('category.show', $category->id) }}" class="text-purple-600 hover:underline">View All</a>
+                    <a href="" class="text-purple-600 hover:underline">View All</a>
                 </div>
 
                 {{-- Product Grid --}}
