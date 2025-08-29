@@ -26,6 +26,16 @@
                                View
                             </a>
                         </div>
+                        <div class="mt-auto">
+                            <a href="{{ route('products.show', $product->id) }}" class="btn btn-outline-secondary btn-sm w-100 mb-2">
+                                View Details
+                            </a>
+                            <form method="POST" action="{{ route('cart.add') }}">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <button type="submit" class="btn btn-primary btn-sm w-100">Add to Cart</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             @empty
