@@ -41,6 +41,23 @@
             </select>
         </div>
 
+        {{-- Category --}}
+        <div class="mb-3">
+            <label>Category</label>
+            <select name="category_id" class="form-control">
+                <option value="">-- Select Category --</option>
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}" 
+                        {{ old('category_id', $product->category_id ?? '') == $category->id ? 'selected' : '' }}>
+                        {{ $category->name }}
+                    </option>
+                @endforeach
+            </select>
+            @error('category_id')
+                <div class="text-danger mt-1 small">{{ $message }}</div>
+            @enderror
+        </div>
+
         <button class="btn btn-primary">{{ isset($product) ? 'Update' : 'Create' }}</button>
         <a href="{{ route('product.index') }}" class="btn btn-secondary">Back</a>
     </form>

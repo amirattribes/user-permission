@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -21,8 +22,8 @@ class ProductController extends Controller
 
     public function create()
     {
-        
-        return view('admin.product.create');
+        $categories = Category::all();
+        return view('admin.product.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -34,7 +35,7 @@ class ProductController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-        $data = $request->only('name', 'price', 'is_active');
+        $data = $request->all();//$request->only('name', 'price', 'is_active');
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('product_images', 'public');
@@ -47,7 +48,8 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('admin.product.edit', compact('product'));
+        $categories = Category::all();
+        return view('admin.product.edit', compact('product','categories'));
     }
 
     public function update(Request $request, Product $product)
@@ -58,7 +60,7 @@ class ProductController extends Controller
             'image' => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->only('name', 'description', 'price', 'is_active');
+        $data = $request->all();//$request->only('name', 'description', 'price', 'is_active');
 
         if ($request->hasFile('image')) {
             // Optional: delete old image
