@@ -15,7 +15,7 @@
         <div class="grid">
             @forelse($products as $product)
                 <div class="card">
-                    <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}" class="h-48 w-full object-cover">
+                    <img src="{{ $product->image }}" alt="{{ $product->name }}" class="h-48 w-full object-cover">
                     <div class="card-body">
                         <h4 class="">{{ $product->name }}</h4>
                         <p>{{ $product->description }}</p>
