@@ -27,7 +27,7 @@ class CategoryProductSeeder extends Seeder
         DB::table('categories')->insert($categories);
          // ✅ Generate random image URLs in a loop
         $image = [];
-        for ($i = 1; $i < 8; $i++) {
+        for ($i = 1; $i < 9; $i++) {
             $seed = $faker->unique()->numberBetween(1, 9999);
             $image[$i] = "https://picsum.photos/seed/product-$seed/640/480";
         }
@@ -47,6 +47,8 @@ class CategoryProductSeeder extends Seeder
             ['category_id' => 6, 'name' => 'Kids T-Shirt', 'description' => 'Cotton summer shirt', 'price' => 800, 'stock' => 50, 'image'=> $image[6]],
             // Ladies Suit
             ['category_id' => 7, 'name' => 'Ladies Embroidered Suit', 'description' => '3 piece suit', 'price' => 4500, 'stock' => 20, 'image'=> $image[7]],
+            // Ladies Suit
+            ['category_id' => 7, 'name' => 'Ladies Simple Suit', 'description' => '3 piece suit', 'price' => 3500, 'stock' => 20, 'image'=> $image[8]],
         ];
 
 
