@@ -145,7 +145,7 @@
       $categories = Category::all(); 
   ?>
 
-@if (request()->routeIs('home') || request()->routeIs('shop.*'))
+@if (request()->routeIs('home') || request()->routeIs('category.*'))
   <!-- Categories Menu -->
   <nav>
     <a href="{{ route('home') }}" class="active">All</a>
