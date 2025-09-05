@@ -139,17 +139,21 @@
         </div>
     </div>
 </nav>
-<?php 
-    use App\Models\Category; 
-    $categories = Category::all(); 
-?>
-    <!-- Categories Menu -->
+
+  <?php 
+      use App\Models\Category; 
+      $categories = Category::all(); 
+  ?>
+
+@if (request()->routeIs('home') || request()->routeIs('shop.*'))
+  <!-- Categories Menu -->
   <nav>
     <a href="{{ route('home') }}" class="active">All</a>
     @foreach($categories as $cat)
-    <a href="{{ route('category.show', $cat->id) }}">{{ $cat->name }}</a>
-     @endforeach
+      <a href="{{ route('category.show', $cat->id) }}">{{ $cat->name }}</a>
+    @endforeach
   </nav>
+@endif
 
 
 
