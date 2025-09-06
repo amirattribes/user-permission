@@ -60,7 +60,7 @@ class ProductController extends Controller
             'image' => 'nullable|image|max:2048',
         ]);
 
-        $data = $request->all();//$request->only('name', 'description', 'price', 'is_active');
+        $data = $request->only('name', 'description', 'price','purchasing_price', 'is_active', 'category_id');
 
         if ($request->hasFile('image')) {
             // Optional: delete old image
