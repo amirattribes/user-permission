@@ -32,8 +32,15 @@
 
         <hr class="bg-light">
 
-        <footer class="bg-dark text-white text-center py-3 mt-5">
-            &copy; {{ now()->year }} YourStore. All rights reserved.
+        <div class="bg-dark text-white py-3 mt-5">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="text-center flex-grow-1">
+                    &copy; {{ now()->year }} Your Store. All rights reserved.
+                </div>
+                <div class="text-end">
+                    Created By Amir: +923343701960
+                </div>
+            </div>
         </div>
         
     </div>
