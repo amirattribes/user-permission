@@ -21,6 +21,11 @@
         </div>
 
         <div class="mb-3">
+            <label>Purchasing Price</label>
+            <input type="number" name="purchasing_price" class="form-control" value="{{ old('purchasing_price', $product->purchasing_price ?? '') }}">
+        </div>
+
+        <div class="mb-3">
             <label>Price</label>
             <input type="number" name="price" class="form-control" value="{{ old('price', $product->price ?? '') }}">
         </div>

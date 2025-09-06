@@ -15,8 +15,11 @@
         <div class="grid">
             @forelse($products as $product)
                 <div class="card">
-                    <img src="{{ $product->image }}" alt="{{ $product->name }}" class="h-48 w-full object-cover">
-                    <div class="card-body">
+                    @if(Str::startsWith($product->image, 'http'))
+                        <img src="{{ $product->image }}" alt="{{ $product->name }}" class="h-48 w-full object-cover">
+                    @else
+                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="h-48 w-full object-cover">
+                    @endif<div class="card-body">
                         <h4 class="">{{ $product->name }}</h4>
                         <p>{{ $product->description }}</p>
                         <div class="price-btn">

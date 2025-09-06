@@ -21,7 +21,9 @@
                     <tr>
                         <th style="width: 10%;">Image</th>
                         <th style="width: 20%;">Name</th>
+                        <th style="width: 15%;">Purchasing Price</th>
                         <th style="width: 15%;">Price</th>
+                        <th style="width: 15%;">Profit</th>
                         <th>Status</th>
                         <th class="text-end" style="width: 20%;">Actions</th>
                     </tr>
@@ -37,7 +39,9 @@
                                 @endif
                             </td>
                             <td class="fw-bold text-capitalize">{{ $product->name }}</td>
+                            <td>PKR {{ number_format($product->purchasing_price, 2) }}</td>
                             <td>PKR {{ number_format($product->price, 2) }}</td>
+                            <td>{{ number_format($product->price - $product->purchasing_price, 2) }}</td>
                             <td>
                                 <span class="badge {{ $product->is_active ? 'bg-success' : 'bg-danger' }}">
                                     {{ $product->is_active ? 'Active' : 'Inactive' }}

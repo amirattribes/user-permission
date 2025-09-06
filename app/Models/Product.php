@@ -13,7 +13,7 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
-        'category_id','name', 'description', 'price', 'image', 'is_active','stock',
+        'category_id','name', 'description', 'price', 'purchasing_price', 'image', 'is_active','stock',
     ];
 
     public function category()
